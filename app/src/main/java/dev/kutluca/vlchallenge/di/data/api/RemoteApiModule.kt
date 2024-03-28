@@ -14,5 +14,5 @@ object RemoteApiModule {
     @Provides
     @Singleton
     fun provideCharactersApi(): CharactersApi =
-        CharactersApi.create("https://rickandmortyapi.com/api")
+        CharactersApi.create("https://rickandmortyapi.com/api/")
 }
