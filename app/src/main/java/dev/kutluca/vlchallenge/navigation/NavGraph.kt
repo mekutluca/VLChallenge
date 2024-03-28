@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.kutluca.vlchallenge.ui.home.HomeScreen
 
 @Composable
 fun AppNavigation() {
@@ -13,10 +14,8 @@ fun AppNavigation() {
         startDestination = Route.Home.path,
     ) {
         composable(Route.Home.path) {
-
+            HomeScreen()
         }
-
-
     }
 }
 
