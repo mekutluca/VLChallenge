@@ -77,6 +77,9 @@ dependencies {
     implementation(libs.retrofit.converter.gson)
     implementation(libs.retrofit.logging.interceptor)
 
+    // Utilities
+    implementation(libs.landscapist.glide)
+
     // Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

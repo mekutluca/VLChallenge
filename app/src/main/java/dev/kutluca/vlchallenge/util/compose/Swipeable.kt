@@ -34,11 +34,11 @@ fun Modifier.swipable(
             onDragStopped = {
                 val rotation = (offset.value / width) * 10
                 if (rotation > rotationThreshold) {
-                    offset.animateTo(width.toFloat() * 100)
+                    offset.animateTo(width.toFloat() * 5)
                     onSwipedRight()
                     offset.snapTo(0f)
                 } else if (rotation < -rotationThreshold) {
-                    offset.animateTo(-width.toFloat() * 100)
+                    offset.animateTo(-width.toFloat() * 5)
                     onSwipedLeft()
                     offset.snapTo(0f)
                 } else {

@@ -1,5 +1,6 @@
 package dev.kutluca.vlchallenge.model.network.character
 
+import dev.kutluca.vlchallenge.model.presentation.character.CharacterStatus
 import dev.kutluca.vlchallenge.model.presentation.character.CharacterUiModel
 
 data class CharacterNetworkModel(
@@ -10,7 +11,11 @@ data class CharacterNetworkModel(
 ) {
     fun toUiModel(): CharacterUiModel = CharacterUiModel(
         name = name,
-        status = status,
+        status = when (status) {
+            "Alive" -> CharacterStatus.ALIVE
+            "Dead" -> CharacterStatus.DEAD
+            else -> CharacterStatus.UNKNOWN
+        },
         location = location.name,
         imageUrl = image,
     )
