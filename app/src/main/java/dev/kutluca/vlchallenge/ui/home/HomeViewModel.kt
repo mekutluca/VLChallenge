@@ -24,11 +24,22 @@ class HomeViewModel @Inject constructor(
 
     override fun onStart(owner: LifecycleOwner) {
         super.onStart(owner)
-
         updateList()
     }
 
-    fun updateList() {
+    fun onCharacterSwipedLeft() {
+        // We can handle the rejection but it is out of scope for the challenge.
+        charactersList.removeFirstOrNull()
+        populateCharactersList()
+    }
+
+    fun onCharacterSwipedRight() {
+        // We can handle the like but it is out of scope for the challenge.
+        charactersList.removeFirstOrNull()
+        populateCharactersList()
+    }
+
+    private fun updateList() {
         viewModelScope.launch {
             runCatching {
                 charactersRepository.getCharacters()
@@ -40,9 +51,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun onCharacterPopped() {
-        repeat(5) {
-            charactersList.removeFirstOrNull()
+    private fun populateCharactersList() {
+        if (charactersList.size < 5) {
+            updateList()
         }
     }
 }
