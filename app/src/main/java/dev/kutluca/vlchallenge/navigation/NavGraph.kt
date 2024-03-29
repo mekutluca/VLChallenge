@@ -19,6 +19,9 @@ fun AppNavigation() {
     }
 }
 
+/**
+ * All possible routes should be listed here.
+ */
 sealed class Route(val path: String) {
     data object Home : Route("home")
 }

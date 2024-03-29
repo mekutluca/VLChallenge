@@ -7,7 +7,12 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 interface CharactersGateway {
-
+    /**
+     * Fetch characters list from the api endpoint.
+     * @param page - Page number that we want to retrieve characters from.
+     *
+     * @return List of fetched Characters.
+     */
     suspend fun fetchCharacters(page: Int = 1): List<CharacterNetworkModel>
 }
 

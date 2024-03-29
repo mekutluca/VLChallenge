@@ -6,6 +6,11 @@ import javax.inject.Inject
 
 interface CharactersRepository {
 
+    /**
+     * Get a new batch of Characters.
+     *
+     * @return List of Characters.
+     */
     suspend fun getCharacters(): List<CharacterUiModel>
 
 }
